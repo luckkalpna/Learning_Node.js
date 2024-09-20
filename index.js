@@ -25,8 +25,13 @@
 
 //---------Fetching data from another file-----------
 
-const app = require("./app")
+// const app = require("./app")
 
-console.log(app)
-console.log(app.z())
+// console.log(app)
+// console.log(app.z())
+
+//--------Create a new file from code----------
+
+const fs = require("fs");
+fs.writeFileSync("hello.txt", "Hello I am new file data");
 

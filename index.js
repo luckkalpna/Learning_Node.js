@@ -18,7 +18,15 @@
 
 //---------For Loop in nodejs-------------
 
-var x = 10;
-for(i=0;i<10;i++){
-    console.log(i)
-}
+// var x = 10;
+// for(i=0;i<10;i++){
+//     console.log(i)
+// }
+
+//---------Fetching data from another file-----------
+
+const app = require("./app")
+
+console.log(app)
+console.log(app.z())
+

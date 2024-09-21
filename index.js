@@ -35,3 +35,7 @@
 // const fs = require("fs");
 // fs.writeFileSync("hello.txt", "Hello I am new file data");
 
+//----------Installing Nodemon-------------
+
+console.log("Nodemon Installed")
+

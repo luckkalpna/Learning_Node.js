@@ -37,5 +37,5 @@
 
 //----------Installing Nodemon-------------
 
-console.log("Nodemon Installed")
+// console.log("Nodemon Installed")
 

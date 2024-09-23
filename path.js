@@ -12,6 +12,6 @@ const dirPath = path.join(__dirname, 'files');
 
 //---------For read any folder how many files in there----------
 
-fs.readdir(dirPath, (err, files)=>{
-    console.log(files)
-})
+// fs.readdir(dirPath, (err, files)=>{
+//     console.log(files)
+// })

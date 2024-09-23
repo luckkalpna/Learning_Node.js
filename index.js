@@ -59,3 +59,31 @@
 // else{
 //     console.log("Invalid Input")
 // }
+
+//----------CRUD Operation----------
+
+//---------For file Create---------
+
+const fs = require("fs");
+const path = require("path");
+const dirPath = path.join(__dirname, "crud");
+
+const filePath = `${dirPath}/new.txt`;
+
+// fs.writeFileSync(filePath, "Hello i am in test file content");
+
+//---------For Read File---------
+
+// fs.readFile(filePath, 'utf8', (err, item)=>{
+//     console.log(item)
+// })
+
+//------------For Update any file----------
+
+// fs.appendFile(filePath, "Hii I am an updated content", (err)=>{
+//     if(!err) console.log("File is Updated")
+// })
+
+//-----------For delete any file-------------
+
+// fs.unlinkSync(filePath)

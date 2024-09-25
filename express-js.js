@@ -36,6 +36,12 @@ app.get("/about", (req, res)=>{
 
 app.get("/help", (req, res)=>{
     res.sendFile(`${publicPath}/help.html`)
+});
+
+//-----------404 page---------
+
+app.get("*", (req, res)=>{
+    res.sendFile(`${publicPath}/pagenotfound.html`)
 })
 
 app.listen(5000);

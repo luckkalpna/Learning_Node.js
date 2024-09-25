@@ -24,6 +24,17 @@ const path = require("path");
 const app = express();
 const publicPath = path.join(__dirname, "public");
 
+//------------Using EJS----------
+app.set("view engine", "ejs");
+
+app.get("/profile", (req, res)=>{
+    const user = {
+        name: "John Deo",
+        email: "abc@gmail.com"
+    }
+    res.render("profile", {user})
+})
+
 // app.use(express.static(publicPath));
 
 app.get("", (req, res)=>{

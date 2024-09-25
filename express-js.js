@@ -30,9 +30,14 @@ app.set("view engine", "ejs");
 app.get("/profile", (req, res)=>{
     const user = {
         name: "John Deo",
-        email: "abc@gmail.com"
+        email: "abc@gmail.com",
+        skills: ['php', 'java', 'js', 'node', 'c++']
     }
     res.render("profile", {user})
+})
+
+app.get("/login", (req, res)=>{
+    res.render("login")
 })
 
 // app.use(express.static(publicPath));

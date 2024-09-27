@@ -1,21 +1,26 @@
-const dbConnect = require("./db-connection");
+const {MongoClient} = require("mongodb");
+const url = "mongodb://localhost/27017";
+const client = new MongoClient(url);
+const database = "e-comm";
 
-//----------With the help of promisses----------
+// async function getData() {
+//     let result = await client.connect();
+//     let db = result.db(database);
+//     let collection = db.collection("products");
+//     let response = await collection.find({}).toArray();
+//     console.log(response)
+// }
 
-// dbConnect().then((res)=>{
-//     res.find().toArray().then((data)=>{
-//         console.log(data)
-//     })
-// })
+// getData();
 
-//-------------In a specific function-----------
+//----------Diffrent method-----------
 
-const main = async () =>{
-    let data = await dbConnect();
-    data = await data.find().toArray();
-    console.log(data)
+async function dbConnect() {
+    let result = await client.connect();
+    let db = result.db(database);
+    return db.collection("products");
+    // let response = await collection.find({}).toArray();
+    // console.log(response)
 }
 
-main();
-
-// console.log(dbConnect());
+module.exports = dbConnect;

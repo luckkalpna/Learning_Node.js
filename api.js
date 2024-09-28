@@ -21,6 +21,17 @@ app.post("/", async (req, res)=>{
     let result = await db.insertOne(req.body);
     res.send(result);  // for original post data
     // res.send({name:"your name"});  // for demo data
+});
+
+//---------PUT Method---------
+
+app.put("/", async (req, res)=>{
+    let data = await dbConnect();
+    let result = data.updateOne(
+        {name:"jay"},
+        { $set:{age:27}}
+    )
+    res.send({result:"update"})
 })
 
 app.listen(5000)

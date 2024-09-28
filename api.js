@@ -17,8 +17,8 @@ app.get("/", async (req, res)=>{
 //--------POST Method----------
 
 app.post("/", async (req, res)=>{
-    let db = await dbConnect.apply()
-    let result = await db.insertOne(req.body)
+    let db = await dbConnect.apply();
+    let result = await db.insertOne(req.body);
     res.send(result);  // for original post data
     // res.send({name:"your name"});  // for demo data
 })

@@ -1,5 +1,6 @@
 const express = require("express");
 const dbConnect = require("./mongodb")
+const mongodb = require("mongodb")  // for delete data
 const app = express();
 
 app.use(express.json());   // for post an data
@@ -32,6 +33,16 @@ app.put("/", async (req, res)=>{
         { $set:{age:27}}
     )
     res.send({result:"update"})
+});
+
+//---------Delete Method---------
+
+app.delete("/:id", async (req, res)=>{
+    let data = await dbConnect();
+    const result = await data.deleteOne({_id: new mongodb.ObjectId(req.params.id)})
+    // console.log(req.params.id)
+    res.send("done")
+    // res.send(result)
 })
 
 app.listen(5000)

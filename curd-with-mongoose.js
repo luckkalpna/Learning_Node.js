@@ -36,5 +36,15 @@ const updateInDB = async () => {
     console.log(data);
 }
 
-// Call the update function (you can switch between saveInDB and updateInDB as needed)
 updateInDB();
+
+//---------Delete Data in DB-----------
+
+const deleteInDB = async () => {
+    await mongoose.connect("mongodb://localhost:27017/e-comm");
+
+    let data = await ProductsModel.deleteOne({ name: "m8" });
+    console.log(data);
+}
+
+deleteInDB();
